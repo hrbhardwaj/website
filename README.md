@@ -16,9 +16,30 @@ Step2 : Make ansible connection between master & slaves
 <img width="468" alt="image" src="https://github.com/hrbhardwaj/website/assets/131919525/7bbc3793-70fe-4970-846f-82e52ea7c3bd">
 
 Step3 : Create a Ansible playbook to install software in machine. 
+<pre>
+<code>
+#Ansible Playbook that I used in my Project 
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install Jenkins, Docker, Java
+      script: jenkins.sh
 
-<img width="283" alt="image" src="https://github.com/hrbhardwaj/website/assets/131919525/41164f2e-eb86-4ff8-a139-cf7d8033663b">
+- hosts: test
+  become: true
+  tasks:
+    - name: Install Docker, Java
+      script: docker.sh
 
+- hosts: prod
+  become: true
+  tasks:
+    - name: Install Docker, Java
+      script: docker.sh
+
+</code>
+</pre>
 Step4 : Create a Docker File and push to repository github
 
 <img width="376" alt="image" src="https://github.com/hrbhardwaj/website/assets/131919525/99227931-5db9-43fc-bada-010aafbfee5d">
