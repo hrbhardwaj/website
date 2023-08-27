@@ -13,8 +13,6 @@ Step1 : launch three machine one master and two slave
 
 Step2 : Make ansible connection between master & slaves
 
-<img width="468" alt="image" src="https://github.com/hrbhardwaj/website/assets/131919525/7bbc3793-70fe-4970-846f-82e52ea7c3bd">
-
 Step3 : Create a Ansible playbook to install software in machine. 
 <pre>
 <code>
